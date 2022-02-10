@@ -15,12 +15,25 @@ export class RecipesService {
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20)
       ]
+    ),
+    new Recipe(
+      'Small Burger',
+      'What else do you need to say?',
+      'https://image.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('French Fries', 10)
+      ]
     )
   ]
 
   recipeSelected = new EventEmitter<Recipe>();
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
